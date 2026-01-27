@@ -3,13 +3,15 @@ from bs4 import BeautifulSoup
 import tkinter as tk
 from tkinter import scrolledtext, messagebox 
 
-#----------------------------
-#DETECCIÓN BACKEND
+#Poryecto realizado hace 4 años atrás para el instituto CPS (modificado recientemente para compartirlo en GH)
+#=====
+#analizador BACKEND 
 #----------------------------
 def detectar_backend(headers, cookies, url):
     resultados = []
-    confianza = 0
+    confianza = 0 #esto es hiper-subjetivo
 
+	#===PRECONFIGURACIONES===
     powered = headers.get("X-Powered-By", "").lower()
     server = headers.get("Server", "").lower()
 
@@ -39,8 +41,8 @@ def detectar_backend(headers, cookies, url):
     return resultados, min(confianza, 100)
 
 
-#----------------------------
-#DETECCIÓN FRONTEND
+#=====
+#analizador FRONTEND
 #----------------------------
 def detectar_frontend(html):
     resultados = []
@@ -61,12 +63,12 @@ def detectar_frontend(html):
 
     if not resultados:
         resultados.append("HTML / JavaScript clásico")
-        confianza = 30
+        confianza = 30 #subjetivo
 
     return resultados, min(confianza, 100)
 
 
-#----------------------------
+#=====
 #FUNCIÓN PRINCIPAL
 #----------------------------
 def analizar_url():
@@ -125,8 +127,8 @@ def mostrar_info():
 
     messagebox.showinfo("ℹ️ Información", mensaje)
 
-#----------------------------
-#GUI (CYBERPUNK STYLE)
+#=====
+#GUI (CYBERPUNK)
 #----------------------------
 ventana = tk.Tk()
 ventana.title("DetectiveDeCodigo // MODO CYBERPUNK ")
