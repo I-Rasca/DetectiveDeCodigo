@@ -1,2 +1,6 @@
 # CodeDetective 
-Detector simple de tecnolog¡as web en Python 
+Detector simple de tecnologias web en Python 
+## CÃ³mo ejecutar
+```bash
+pip install requests beautifulsoup4
+python detector_web_gui.py
