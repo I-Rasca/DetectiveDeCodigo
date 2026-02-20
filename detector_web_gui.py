@@ -1,9 +1,9 @@
-import requests
-from bs4 import BeautifulSoup
-import tkinter as tk
+import requests #peticiones HTTP
+from bs4 import BeautifulSoup #analizador HTML
+import tkinter as tk #GUI
 from tkinter import scrolledtext, messagebox 
 
-#Poryecto realizado hace 4 años atrás para el instituto CPS (modificado recientemente para compartirlo en GH)
+#Poryecto realizado hace años atrás para el instituto "Cpascal" (modificado recientemente para compartirlo en GH)
 #=====
 #analizador BACKEND 
 #----------------------------
@@ -128,7 +128,7 @@ def mostrar_info():
     messagebox.showinfo("ℹ️ Información", mensaje)
 
 #=====
-#GUI (CYBERPUNK)
+#GUI (estilo CYBERPUNK)
 #----------------------------
 ventana = tk.Tk()
 ventana.title("DetectiveDeCodigo // MODO CYBERPUNK ")
@@ -206,6 +206,6 @@ salida = scrolledtext.ScrolledText(
 salida.pack(expand=True, fill="both", padx=12, pady=12)
 
 
-ventana.bind("<Return>", lambda event: analizar_url())
+ventana.bind("<Return>", lambda event: analizar_url()) #función lambda, crucial para simplificar
 
 ventana.mainloop()
